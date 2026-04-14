@@ -1,0 +1,23 @@
+:root {
+  --color-ink: #1f1b18;
+  --color-ink-soft: #655d58;
+  --color-sand: #f8f1ea;
+  --color-rose: #d9a7a0;
+  --color-rose-deep: #a96d65;
+  --color-cream: #fffaf5;
+  --color-sage: #c9d2c0;
+  --color-line: rgba(31, 27, 24, 0.1);
+  --color-panel: rgba(255, 255, 255, 0.72);
+  --shadow-soft: 0 24px 80px rgba(59, 35, 23, 0.08);
+  --shadow-card: 0 18px 40px rgba(59, 35, 23, 0.1);
+  --radius-pill: 999px;
+  --radius-lg: 32px;
+  --radius-md: 24px;
+  --radius-sm: 16px;
+  --container: 1200px;
+  --space-xs: 0.75rem;
+  --space-xl: 3rem;
+  --space-3xl: 6rem;
+  --font-body: 'Avenir Next', 'Segoe UI', sans-serif;
+  --font-heading: 'Iowan Old Style', 'Times New Roman', serif;
+}

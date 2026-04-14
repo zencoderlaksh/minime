@@ -1,0 +1,25 @@
+.container {
+  width: min(calc(100% - 2rem), var(--container));
+  margin-inline: auto;
+}
+
+.section-space {
+  padding-block: var(--space-3xl);
+}
+
+.section-space--sm {
+  padding-block: var(--space-xl);
+}
+
+.section-space--lg {
+  padding-block: 7rem;
+}
+
+.eyebrow {
+  margin-bottom: var(--space-xs);
+  color: var(--color-rose-deep);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
