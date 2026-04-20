@@ -1,3 +1,9 @@
+import wallOne from '../assets/images/WallOne.jpg'
+import wallTwo from '../assets/images/WallTwo.jpg'
+import wallThree from '../assets/images/WallThree.jpg'
+import wallFour from '../assets/images/WallFour.jpg'
+import wallFive from '../assets/images/WallFive.jpg'
+
 export const navLinks = [
   {
     label: 'New Arrivals',
@@ -5,8 +11,7 @@ export const navLinks = [
     featured: {
       title: 'Freshly curated drops',
       description: 'The latest silhouettes, softer palettes, and easy gifting edits.',
-      image:
-        'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80',
+      image: wallOne,
     },
     groups: [
       {
@@ -33,8 +38,7 @@ export const navLinks = [
     featured: {
       title: 'Modern softness for everyday and occasion dressing',
       description: 'Elegant co-ords, festive statements, and comfort-led essentials.',
-      image:
-        'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80',
+      image: wallTwo,
     },
     groups: [
       {
@@ -61,8 +65,7 @@ export const navLinks = [
     featured: {
       title: 'Playful pieces with polished detail',
       description: 'Comfort-forward dressing for celebrations, portraits, and daily life.',
-      image:
-        'https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=900&q=80',
+      image: wallThree,
     },
     groups: [
       {
@@ -89,8 +92,7 @@ export const navLinks = [
     featured: {
       title: 'Dress for celebrations with calm confidence',
       description: 'Looks that feel elevated on screen and easy in real life.',
-      image:
-        'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80',
+      image: wallFour,
     },
     groups: [
       {
@@ -117,8 +119,7 @@ export const navLinks = [
     featured: {
       title: 'Most-loved pieces, already validating the direction',
       description: 'A clear merchandising rail we can plug directly into backend data later.',
-      image:
-        'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80',
+      image: wallFive,
     },
     groups: [
       {

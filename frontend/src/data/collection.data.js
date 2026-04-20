@@ -1,3 +1,10 @@
+import wallOne from '../assets/images/WallOne.jpg'
+import wallTwo from '../assets/images/WallTwo.jpg'
+import wallThree from '../assets/images/WallThree.jpg'
+import wallFour from '../assets/images/WallFour.jpg'
+import wallFive from '../assets/images/WallFive.jpg'
+import wallSix from '../assets/images/WallSix.jpg'
+
 export const collectionFilters = [
   {
     id: 'category',
@@ -17,23 +24,34 @@ export const collectionFilters = [
 ]
 
 export const collectionHero = {
+  'new-arrivals': {
+    title: 'New Arrivals',
+    description: 'Fresh drops with a cleaner editorial browsing flow.',
+    image: wallOne,
+  },
   women: {
     title: 'Women',
-    description:
-      'A refined collection page built for discovery, storytelling, and easy backend mapping later.',
-    image:
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80',
+    description: 'A cleaner women edit with elevated product-first discovery.',
+    image: wallTwo,
   },
   kids: {
     title: 'Kids',
-    description: 'Playful, polished, and ready for curated filter-based browsing.',
-    image:
-      'https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=1200&q=80',
+    description: 'Playful, polished, and ready for a more visual browse.',
+    image: wallThree,
+  },
+  occasion: {
+    title: 'Occasion',
+    description: 'Event dressing for women and kids with softer styling.',
+    image: wallFour,
+  },
+  bestsellers: {
+    title: 'Bestsellers',
+    description: 'The most-loved styles, gathered into one easy edit.',
+    image: wallFive,
   },
   default: {
     title: 'Collection',
     description: 'Premium merchandising with sticky filters and elevated product storytelling.',
-    image:
-      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80',
+    image: wallSix,
   },
 }

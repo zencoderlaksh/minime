@@ -1,34 +1,44 @@
 import { Link } from 'react-router-dom'
-import SectionHeader from '../../../components/common/SectionHeader.jsx'
-import { featuredCollections } from '../../../data/home.data.js'
+import { bestsellerProducts } from '../../../data/home.data.js'
+import { formatCurrency } from '../../../lib/utils/formatCurrency.js'
 
 function FeaturedCollectionsSection() {
-  return (
-    <section className="section-space">
-      <div className="container">
-        <SectionHeader
-          eyebrow="Collections"
-          title="Built for women, children, and the moments they dress for."
-          description="A homepage structure like this gives MiniMe clear shopping paths without losing the editorial mood."
-        />
+  const galleryProducts = [...bestsellerProducts, ...bestsellerProducts]
 
-        <div className="collection-grid">
-          {featuredCollections.map((collection) => (
-            <Link
-              key={collection.id}
-              to={`/collections/${collection.id}`}
-              className="collection-card"
-            >
-              <div className="collection-card__image">
-                <img src={collection.image} alt={`${collection.title} collection`} loading="lazy" />
+  return (
+    <section className="section-space section-space--gallery">
+      <div className="infinite-gallery">
+        <div className="container infinite-gallery__header">
+          <h2>A Touch of Warmth</h2>
+        </div>
+
+        <div className="infinite-gallery__viewport">
+          <div className="infinite-gallery__track">
+            {[0, 1].map((groupIndex) => (
+              <div
+                key={groupIndex}
+                className="infinite-gallery__group"
+                aria-hidden={groupIndex === 1}
+              >
+                {galleryProducts.map((product, productIndex) => (
+                  <Link
+                    key={`${groupIndex}-${product.id}-${productIndex}`}
+                    to={`/product/${product.slug}`}
+                    className="infinite-gallery__card"
+                  >
+                    <div className="infinite-gallery__media">
+                      <img src={product.image} alt={product.name} loading="lazy" />
+                    </div>
+
+                    <div className="infinite-gallery__details">
+                      <strong>{product.name}</strong>
+                      <span>{formatCurrency(product.price)}</span>
+                    </div>
+                  </Link>
+                ))}
               </div>
-              <div className="collection-card__content">
-                <strong>{collection.title}</strong>
-                <p>{collection.description}</p>
-                <span>Explore edit</span>
-              </div>
-            </Link>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

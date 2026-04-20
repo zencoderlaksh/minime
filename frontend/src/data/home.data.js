@@ -1,24 +1,35 @@
+import heroVideoFile from '../assets/images/1471581_People_Fashion_3840x2160.mov'
+import wallOne from '../assets/images/WallOne.jpg'
+import wallTwo from '../assets/images/WallTwo.jpg'
+import wallThree from '../assets/images/WallThree.jpg'
+import wallFour from '../assets/images/WallFour.jpg'
+import wallFive from '../assets/images/WallFive.jpg'
+import wallSix from '../assets/images/WallSix.jpg'
+import wallSeven from '../assets/images/WallSeven.jpg'
+import wallEight from '../assets/images/WallEight.jpg'
+import wallNine from '../assets/images/WallNine.jpg'
+
 export const featuredCollections = [
   {
     id: 'women',
-    title: 'Women',
-    description: 'Graceful silhouettes with a soft luxury point of view.',
-    image:
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80',
+    eyebrow: 'Women',
+    title: 'Sun-washed tailoring',
+    description: 'Clean silhouettes and occasion-ready softness.',
+    image: wallOne,
   },
   {
-    id: 'girls',
-    title: 'Girls',
-    description: 'Playful dressing with polished details and comfortable fits.',
-    image:
-      'https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=900&q=80',
+    id: 'kids',
+    eyebrow: 'Kids',
+    title: 'Playful polished sets',
+    description: 'Mini looks with a dressed-up finish.',
+    image: wallTwo,
   },
   {
-    id: 'boys',
-    title: 'Boys',
-    description: 'Easy sets and occasion pieces designed for movement and charm.',
-    image:
-      'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=900&q=80',
+    id: 'occasion',
+    eyebrow: 'Occasion',
+    title: 'Looks for family moments',
+    description: 'Event edits that still feel easy to wear.',
+    image: wallThree,
   },
 ]
 
@@ -31,8 +42,12 @@ export const bestsellerProducts = [
     price: 3299,
     badge: 'New Edit',
     label: 'Rose Pink',
-    image:
-      'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80',
+    image: wallFour,
+    gallery: [
+      { type: 'image', src: wallFour },
+      { type: 'image', src: wallFive },
+      { type: 'video', src: heroVideoFile, poster: wallFour },
+    ],
   },
   {
     id: 2,
@@ -42,8 +57,12 @@ export const bestsellerProducts = [
     price: 4899,
     badge: 'Best Seller',
     label: 'Ivory Set',
-    image:
-      'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80',
+    image: wallFive,
+    gallery: [
+      { type: 'image', src: wallFive },
+      { type: 'image', src: wallSix },
+      { type: 'video', src: heroVideoFile, poster: wallFive },
+    ],
   },
   {
     id: 3,
@@ -53,8 +72,12 @@ export const bestsellerProducts = [
     price: 4199,
     badge: 'Soft Cotton',
     label: 'Butter Yellow',
-    image:
-      'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80',
+    image: wallSix,
+    gallery: [
+      { type: 'image', src: wallSix },
+      { type: 'image', src: wallSeven },
+      { type: 'image', src: wallEight },
+    ],
   },
   {
     id: 4,
@@ -64,24 +87,26 @@ export const bestsellerProducts = [
     price: 3599,
     badge: 'Gift Ready',
     label: 'Celebration Edit',
-    image:
-      'https://images.unsplash.com/photo-1513278974582-3e1b4a4fa21d?auto=format&fit=crop&w=900&q=80',
+    image: wallSeven,
+    gallery: [
+      { type: 'image', src: wallSeven },
+      { type: 'image', src: wallEight },
+      { type: 'video', src: heroVideoFile, poster: wallSeven },
+    ],
   },
 ]
 
-export const homeHighlights = [
-  'Women and kidswear',
-  'Soft-touch fabrics',
-  'Premium festive edits',
-  'Everyday comfort',
-  'Slow-crafted details',
-]
+export const homeHighlights = ['Women', 'Kids', 'Occasion', 'New arrivals', 'Bestsellers']
 
 export const heroImages = {
-  primary:
-    'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=80',
-  secondary:
-    'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80',
+  primary: wallOne,
+  secondary: wallTwo,
+  accent: wallThree,
+}
+
+export const heroVideo = {
+  src: heroVideoFile,
+  poster: wallOne,
 }
 
 export const storyMoments = [
@@ -89,47 +114,101 @@ export const storyMoments = [
     title: 'For mothers, daughters, and every soft moment in between.',
     description:
       'MiniMe should feel like a campaign-led fashion house with commerce woven in, not a product grid with decoration pasted on top.',
-    image:
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1100&q=80',
+    image: wallFour,
   },
   {
     title: 'Festive enough for occasions, effortless enough for daily wear.',
     description:
       'The final homepage can use motion-led storytelling here with layered copy, scroll reveals, and elevated CTAs.',
-    image:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1100&q=80',
+    image: wallFive,
   },
 ]
 
 export const trustHighlights = [
-  { value: 'Premium', label: 'fabric-first styling' },
-  { value: 'Women + Kids', label: 'clear collection storytelling' },
-  { value: 'Smooth', label: 'mobile-first browsing flow' },
+  { value: 'Women', label: 'tailored edits' },
+  { value: 'Kids', label: 'celebration sets' },
+  { value: 'Occasion', label: 'event dressing' },
 ]
 
 export const communityTiles = [
   {
-    id: 'journal',
-    title: 'MiniMe Journal',
-    image:
-      'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=80',
+    id: 'spring-edit',
+    eyebrow: 'Spring Edit',
+    title: 'Soft tailoring.',
+    description: '',
+    cta: 'Shop women',
+    href: '/collections/women',
+    layout: 'feature',
+    poster: wallThree,
+    image: wallThree,
   },
   {
-    id: 'mothers-daughters',
-    title: 'Mothers and Daughters',
-    image:
-      'https://images.unsplash.com/photo-1518623489648-a173ef7824f3?auto=format&fit=crop&w=900&q=80',
+    id: 'occasion-motion',
+    eyebrow: 'Hover Reel',
+    title: 'In motion.',
+    description: '',
+    cta: 'View occasion',
+    href: '/collections/occasion',
+    layout: 'portrait',
+    poster: wallFour,
+    image: wallFour,
+    video: heroVideoFile,
   },
   {
-    id: 'occasion-edit',
-    title: 'Occasion Edit',
-    image:
-      'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80',
+    id: 'mini-icons',
+    eyebrow: 'Mini Icons',
+    title: 'Mini sets.',
+    description: '',
+    cta: 'Shop kids',
+    href: '/collections/kids',
+    layout: 'standard',
+    poster: wallFive,
+    image: wallFive,
   },
   {
-    id: 'daily-comfort',
-    title: 'Daily Comfort',
-    image:
-      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80',
+    id: 'studio-reel',
+    eyebrow: 'Studio Reel',
+    title: 'Everyday ease.',
+    description: '',
+    cta: 'Browse new arrivals',
+    href: '/collections/new-arrivals',
+    layout: 'standard',
+    poster: wallSix,
+    image: wallSix,
+    video: heroVideoFile,
   },
+]
+
+export const lookbookCards = [
+  {
+    id: 'coastal',
+    title: 'Coastal light',
+    href: '/collections/new-arrivals',
+    image: wallSeven,
+  },
+  {
+    id: 'family',
+    title: 'Family occasion',
+    href: '/collections/occasion',
+    image: wallEight,
+  },
+  {
+    id: 'mini',
+    title: 'Mini dressing',
+    href: '/collections/kids',
+    image: wallNine,
+  },
+  {
+    id: 'women',
+    title: 'Everyday women',
+    href: '/collections/women',
+    image: wallOne,
+  },
+]
+
+export const homeQuickLinks = [
+  { label: 'Shop Women', href: '/collections/women' },
+  { label: 'Shop Kids', href: '/collections/kids' },
+  { label: 'Occasion', href: '/collections/occasion' },
+  { label: 'New Arrivals', href: '/collections/new-arrivals' },
 ]
