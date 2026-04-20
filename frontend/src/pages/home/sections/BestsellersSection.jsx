@@ -100,7 +100,7 @@ function BestsellersSection() {
                         aria-label={`Open gallery for ${product.name}`}
                       >
                         <div className="infinite-gallery__editorial-media">
-                          <img src={product.image} alt={product.name} loading="lazy" />
+                          <img src={product.image} alt={product.name} loading="lazy" decoding="async" />
                         </div>
                       </button>
                     )
@@ -156,19 +156,21 @@ function BestsellersSection() {
                   autoPlay
                   loop
                   playsInline
+                  preload="metadata"
                 />
               ) : (
                 <img
                   className="gallery-lightbox__media"
                   src={activeMedia?.src}
                   alt={activeProduct.name}
+                  decoding="async"
                 />
               )}
 
               <div className="gallery-lightbox__product-card">
                 <div className="gallery-lightbox__product-meta">
                   <div className="gallery-lightbox__product-thumb">
-                    <img src={activeProduct.image} alt={activeProduct.name} />
+                    <img src={activeProduct.image} alt={activeProduct.name} decoding="async" />
                   </div>
                   <div>
                     <strong>{activeProduct.name}</strong>
@@ -210,9 +212,9 @@ function BestsellersSection() {
                 aria-label={`Show media ${mediaIndex + 1}`}
               >
                 {media.type === 'video' ? (
-                  <video src={media.src} muted playsInline preload="metadata" poster={media.poster} />
+                  <video src={media.src} muted playsInline preload="none" poster={media.poster} />
                 ) : (
-                  <img src={media.src} alt="" />
+                  <img src={media.src} alt="" decoding="async" />
                 )}
               </button>
             ))}

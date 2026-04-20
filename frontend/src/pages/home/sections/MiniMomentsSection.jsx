@@ -54,7 +54,7 @@ function MiniMomentsSection() {
             className={index === 1 ? 'story-panel story-panel--reverse' : 'story-panel'}
           >
             <div className="story-panel__media">
-              <img src={moment.image} alt={moment.title} loading="lazy" />
+              <img src={moment.image} alt={moment.title} loading="lazy" decoding="async" />
             </div>
 
             <div className="story-panel__content">

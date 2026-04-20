@@ -27,7 +27,7 @@ function FeaturedCollectionsSection() {
                     className="infinite-gallery__card"
                   >
                     <div className="infinite-gallery__media">
-                      <img src={product.image} alt={product.name} loading="lazy" />
+                      <img src={product.image} alt={product.name} loading="lazy" decoding="async" />
                     </div>
 
                     <div className="infinite-gallery__details">

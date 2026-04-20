@@ -20,7 +20,7 @@ function CollectionPage() {
           </div>
 
           <div className="collection-hero__media">
-            <img src={hero.image} alt={hero.title} />
+            <img src={hero.image} alt={hero.title} fetchPriority="high" decoding="async" />
           </div>
         </div>
 

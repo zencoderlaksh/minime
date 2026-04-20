@@ -390,6 +390,15 @@ button {
   object-fit: cover;
 }
 
+.video-hero__media--video {
+  opacity: 0;
+  transition: opacity 320ms ease;
+}
+
+.video-hero__media--video.is-visible {
+  opacity: 1;
+}
+
 .video-hero__overlay {
   background:
     linear-gradient(180deg, rgba(16, 12, 10, 0.18), rgba(16, 12, 10, 0.32)),

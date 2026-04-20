@@ -5,7 +5,7 @@ function ProductCard({ product }) {
   return (
     <article className="product-card">
       <Link to={`/product/${product.slug}`} className="product-card__media">
-        <img src={product.image} alt={product.name} loading="lazy" />
+        <img src={product.image} alt={product.name} loading="lazy" decoding="async" />
         <span>{product.label}</span>
       </Link>
 

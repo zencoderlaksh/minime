@@ -83,14 +83,19 @@ function InstagramSection() {
               aria-label={tile.title}
             >
               <div className="campaign-card__media">
-                <img src={tile.poster ?? tile.image} alt={tile.title} loading="lazy" />
+                <img
+                  src={tile.poster ?? tile.image}
+                  alt={tile.title}
+                  loading="lazy"
+                  decoding="async"
+                />
                 {tile.video ? (
                   <video
                     src={tile.video}
                     muted
                     loop
                     playsInline
-                    preload="metadata"
+                    preload="none"
                     poster={tile.poster}
                     aria-hidden="true"
                   />

@@ -8,7 +8,7 @@ function LookbookSection() {
         <div className="lookbook-grid">
           {lookbookCards.map((card) => (
             <Link key={card.id} to={card.href} className="lookbook-card">
-              <img src={card.image} alt={card.title} loading="lazy" />
+              <img src={card.image} alt={card.title} loading="lazy" decoding="async" />
               <span>{card.title}</span>
             </Link>
           ))}

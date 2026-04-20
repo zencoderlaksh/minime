@@ -10,7 +10,7 @@ function MegaMenu({ item, visible }) {
       <div className="container mega-menu__inner">
         <div className="mega-menu__feature">
           <div className="mega-menu__image">
-            <img src={item.featured.image} alt={item.featured.title} />
+            <img src={item.featured.image} alt={item.featured.title} loading="lazy" decoding="async" />
           </div>
           <div className="mega-menu__copy">
             <p className="eyebrow">Curated Edit</p>

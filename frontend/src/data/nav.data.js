@@ -1,8 +1,6 @@
-import wallOne from '../assets/images/WallOne.jpg'
-import wallTwo from '../assets/images/WallTwo.jpg'
-import wallThree from '../assets/images/WallThree.jpg'
-import wallFour from '../assets/images/WallFour.jpg'
-import wallFive from '../assets/images/WallFive.jpg'
+import { mediaLibrary } from './media.data.js'
+
+const { wallOne, wallTwo, wallThree, wallFour, wallFive } = mediaLibrary
 
 export const navLinks = [
   {
@@ -11,7 +9,7 @@ export const navLinks = [
     featured: {
       title: 'Freshly curated drops',
       description: 'The latest silhouettes, softer palettes, and easy gifting edits.',
-      image: wallOne,
+      image: wallOne.thumb,
     },
     groups: [
       {
@@ -38,7 +36,7 @@ export const navLinks = [
     featured: {
       title: 'Modern softness for everyday and occasion dressing',
       description: 'Elegant co-ords, festive statements, and comfort-led essentials.',
-      image: wallTwo,
+      image: wallTwo.thumb,
     },
     groups: [
       {
@@ -65,7 +63,7 @@ export const navLinks = [
     featured: {
       title: 'Playful pieces with polished detail',
       description: 'Comfort-forward dressing for celebrations, portraits, and daily life.',
-      image: wallThree,
+      image: wallThree.thumb,
     },
     groups: [
       {
@@ -92,7 +90,7 @@ export const navLinks = [
     featured: {
       title: 'Dress for celebrations with calm confidence',
       description: 'Looks that feel elevated on screen and easy in real life.',
-      image: wallFour,
+      image: wallFour.thumb,
     },
     groups: [
       {
@@ -119,7 +117,7 @@ export const navLinks = [
     featured: {
       title: 'Most-loved pieces, already validating the direction',
       description: 'A clear merchandising rail we can plug directly into backend data later.',
-      image: wallFive,
+      image: wallFive.thumb,
     },
     groups: [
       {
