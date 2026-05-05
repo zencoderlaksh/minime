@@ -116,6 +116,108 @@ export const heroVideo = {
   poster: wallOne.full,
 };
 
+export const collectionVideoGroups = [
+  {
+    id: "women",
+    title: "Women",
+    cards: [
+      {
+        id: "women-1",
+        name: "Satin Slip Dress",
+        category: "Women",
+        href: "/product/satin-slip-dress",
+        poster: wallOne.full,
+        video: heroVideoFile,
+        price: 3499,
+      },
+      {
+        id: "women-2",
+        name: "Summer Shirt Dress",
+        category: "Women",
+        href: "/product/summer-shirt-dress",
+        poster: wallTwo.full,
+        video: heroVideoFile,
+        price: 3799,
+      },
+      {
+        id: "women-3",
+        name: "Pleated Midi Dress",
+        category: "Women",
+        href: "/product/pleated-midi-dress",
+        poster: wallThree.full,
+        video: heroVideoFile,
+        price: 4199,
+      },
+    ],
+  },
+  {
+    id: "children",
+    title: "Children",
+    cards: [
+      {
+        id: "kids-1",
+        name: "Playful Mini Dress",
+        category: "Children",
+        href: "/product/playful-mini-dress",
+        poster: wallFour.full,
+        video: heroVideoFile,
+        price: 2599,
+      },
+      {
+        id: "kids-2",
+        name: "Soft Cotton Set",
+        category: "Children",
+        href: "/product/soft-cotton-set",
+        poster: wallFive.full,
+        video: heroVideoFile,
+        price: 2899,
+      },
+      {
+        id: "kids-3",
+        name: "Storybook Dress",
+        category: "Children",
+        href: "/product/storybook-dress",
+        poster: wallSix.full,
+        video: heroVideoFile,
+        price: 3199,
+      },
+    ],
+  },
+  {
+    id: "occasion",
+    title: "Occasion",
+    cards: [
+      {
+        id: "occasion-1",
+        name: "Sequin Evening Dress",
+        category: "Occasion",
+        href: "/product/sequin-evening-dress",
+        poster: wallSeven.full,
+        video: heroVideoFile,
+        price: 5199,
+      },
+      {
+        id: "occasion-2",
+        name: "Tailored Sheath Dress",
+        category: "Occasion",
+        href: "/product/tailored-sheath-dress",
+        poster: wallEight.full,
+        video: heroVideoFile,
+        price: 4799,
+      },
+      {
+        id: "occasion-3",
+        name: "Satin Wrap Dress",
+        category: "Occasion",
+        href: "/product/satin-wrap-dress",
+        poster: wallNine.full,
+        video: heroVideoFile,
+        price: 4999,
+      },
+    ],
+  },
+];
+
 export const storyMoments = [
   {
     title: "For mothers, daughters, and every soft moment in between.",
@@ -208,6 +310,90 @@ export const lookbookCards = [
     title: "Everyday women",
     href: "/collections/women",
     image: wallOne.full,
+  },
+];
+
+export const collectionGalleryItems = [
+  {
+    id: "knitwear",
+    title: "Knitwear",
+    description: "Soft staples for layering.",
+    href: "/collections/knitwear",
+    image: wallOne.full,
+  },
+  {
+    id: "occasionwear",
+    title: "Occasionwear",
+    description: "Polished edits for every event.",
+    href: "/collections/occasion",
+    image: wallTwo.full,
+  },
+  {
+    id: "skirts",
+    title: "Skirts",
+    description: "Flowing shapes and modern silhouettes.",
+    href: "/collections/skirts",
+    image: wallThree.full,
+  },
+  {
+    id: "denim",
+    title: "Denim",
+    description: "Everyday denim dressing.",
+    href: "/collections/denim",
+    image: wallFour.full,
+  },
+];
+
+export const galleryCards = [
+  {
+    id: "gallery-1",
+    title: "Weekend with the kids",
+    category: "Children",
+    cta: "Shop now",
+    href: "/collections/kids",
+    image: wallTwo.full,
+    variant: "large",
+  },
+  {
+    id: "gallery-2",
+    title: "Soft tailoring for her",
+    category: "Women",
+    cta: "Browse edit",
+    href: "/collections/women",
+    image: wallOne.full,
+    variant: "wide",
+  },
+  {
+    id: "gallery-3",
+    title: "Occasion-ready prints",
+    category: "Occasion",
+    cta: "View looks",
+    href: "/collections/occasion",
+    image: wallThree.full,
+  },
+  {
+    id: "gallery-4",
+    title: "Playful polished sets",
+    category: "Children",
+    cta: "Shop kids",
+    href: "/collections/kids",
+    image: wallFour.full,
+  },
+  {
+    id: "gallery-5",
+    title: "Effortless dresses",
+    category: "Women",
+    cta: "Explore women",
+    href: "/collections/women",
+    image: wallFive.full,
+  },
+  {
+    id: "gallery-6",
+    title: "Seasonal staples",
+    category: "New arrivals",
+    cta: "See more",
+    href: "/collections/new-arrivals",
+    image: wallSix.full,
   },
 ];
 

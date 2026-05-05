@@ -1,10 +1,8 @@
-import { Helmet } from 'react-helmet-async'
-import HeroSection from './sections/HeroSection.jsx'
-import FeaturedCollectionsSection from './sections/FeaturedCollectionsSection.jsx'
-import BestsellersSection from './sections/BestsellersSection.jsx'
-import InstagramSection from './sections/InstagramSection.jsx'
-import LookbookSection from './sections/LookbookSection.jsx'
-import { seoDefaults } from '../../lib/seo/seoDefaults.js'
+import { Helmet } from "react-helmet-async";
+import HeroSection from "./sections/HeroSection.jsx";
+import CollectionGallerySection from "./sections/CollectionGallerySection.jsx";
+import GallerySection from "./sections/GallerySection.jsx";
+import { seoDefaults } from "../../lib/seo/seoDefaults.js";
 
 function HomePage() {
   return (
@@ -15,12 +13,10 @@ function HomePage() {
       </Helmet>
 
       <HeroSection />
-      <InstagramSection />
-      <FeaturedCollectionsSection />
-      <LookbookSection />
-      <BestsellersSection />
+      <CollectionGallerySection />
+      <GallerySection />
     </>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;
