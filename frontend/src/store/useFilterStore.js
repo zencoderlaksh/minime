@@ -1,14 +1,32 @@
-import { create } from 'zustand'
+import { create } from "zustand";
 
 export const useFilterStore = create((set) => ({
-  sortBy: 'featured',
+  sortBy: "featured",
   activeFilters: {},
+  pendingFilters: {},
+
   setSortBy: (sortBy) => set({ sortBy }),
-  setFilter: (key, value) =>
+
+  setPendingFilter: (filterType, value) =>
+    set((state) => {
+      const currentValues = state.pendingFilters[filterType] || [];
+      const newValues =
+        currentValues.includes(value) ?
+          currentValues.filter((v) => v !== value)
+        : [...currentValues, value];
+
+      return {
+        pendingFilters: {
+          ...state.pendingFilters,
+          [filterType]: newValues,
+        },
+      };
+    }),
+
+  applyFilters: () =>
     set((state) => ({
-      activeFilters: {
-        ...state.activeFilters,
-        [key]: value,
-      },
+      activeFilters: state.pendingFilters,
     })),
-}))
+
+  clearFilters: () => set({ activeFilters: {}, pendingFilters: {} }),
+}));

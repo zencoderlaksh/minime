@@ -37,65 +37,89 @@ export const featuredCollections = [
   },
 ];
 
-export const bestsellerProducts = [
-  {
-    id: 1,
-    slug: "rose-garden-dress",
-    name: "Rose Garden Dress",
-    category: "Girls Festive",
-    price: 3299,
-    badge: "New Edit",
-    label: "Rose Pink",
-    image: wallFour.thumb,
-    gallery: [
-      { type: "image", src: wallFour.full },
-      { type: "image", src: wallFive.full },
-    ],
-  },
-  {
-    id: 2,
-    slug: "ivory-bloom-co-ord",
-    name: "Ivory Bloom Co-ord",
-    category: "Women Occasion",
-    price: 4899,
-    badge: "Best Seller",
-    label: "Ivory Set",
-    image: wallFive.thumb,
-    gallery: [
-      { type: "image", src: wallFive.full },
-      { type: "image", src: wallSix.full },
-    ],
-  },
-  {
-    id: 3,
-    slug: "sunlit-kurta-set",
-    name: "Sunlit Kurta Set",
-    category: "Women Everyday",
-    price: 4199,
-    badge: "Soft Cotton",
-    label: "Butter Yellow",
-    image: wallSix.thumb,
-    gallery: [
-      { type: "image", src: wallSix.full },
-      { type: "image", src: wallSeven.full },
-      { type: "image", src: wallEight.full },
-    ],
-  },
-  {
-    id: 4,
-    slug: "mini-celebration-bundle",
-    name: "Mini Celebration Bundle",
-    category: "Kids Occasion",
-    price: 3599,
-    badge: "Gift Ready",
-    label: "Celebration Edit",
-    image: wallSeven.thumb,
-    gallery: [
-      { type: "image", src: wallSeven.full },
-      { type: "image", src: wallEight.full },
-    ],
-  },
+const productImagePool = [
+  wallOne,
+  wallTwo,
+  wallThree,
+  wallFour,
+  wallFive,
+  wallSix,
+  wallSeven,
+  wallEight,
+  wallNine,
 ];
+
+const womenSizes = ["XS", "S", "M", "L", "XL"];
+const kidsSizes = ["2-3Y", "4-5Y", "6-7Y", "8-9Y"];
+
+const productSpecs = [
+  ["atelier-linen-co-ord", "Atelier Linen Co-ord", "Co-ord Sets", "Everyday", womenSizes, 4899, "New", "New Arrivals", ["new-arrivals", "women", "bestsellers"]],
+  ["rose-garden-mini-dress", "Rose Garden Mini Dress", "Dresses", "Festive", kidsSizes, 3299, "New Edit", "New Arrivals", ["new-arrivals", "kids"]],
+  ["sunlit-kurta-set", "Sunlit Kurta Set", "Kurta Sets", "Everyday", womenSizes, 4199, "Soft Cotton", "New Arrivals", ["new-arrivals", "women"]],
+  ["ivory-bloom-dress", "Ivory Bloom Dress", "Dresses", "Everyday", womenSizes, 3799, "Best Seller", "New Arrivals", ["new-arrivals", "women", "bestsellers"]],
+  ["mini-navy-co-ord", "Mini Navy Co-ord", "Co-ord Sets", "Portrait Day", kidsSizes, 2999, "New", "New Arrivals", ["new-arrivals", "kids"]],
+  ["emerald-festive-kurta", "Emerald Festive Kurta", "Kurta Sets", "Festive", womenSizes, 4499, "New", "New Arrivals", ["new-arrivals", "women", "occasion"]],
+  ["gold-occasion-set", "Gold Occasion Set", "Co-ord Sets", "Wedding", ["M", "L", "XL"], 5499, "Premium", "New Arrivals", ["new-arrivals", "occasion", "bestsellers"]],
+  ["pearl-trim-midi", "Pearl Trim Midi", "Dresses", "Wedding", womenSizes, 5299, "Limited", "New Arrivals", ["new-arrivals", "occasion"]],
+  ["cotton-cloud-kurta", "Cotton Cloud Kurta", "Kurta Sets", "Everyday", womenSizes, 3999, "New", "New Arrivals", ["new-arrivals", "women"]],
+  ["mini-sage-dress", "Mini Sage Dress", "Kidswear", "Festive", kidsSizes, 2799, "New", "New Arrivals", ["new-arrivals", "kids"]],
+  ["blush-family-set", "Blush Family Set", "Co-ord Sets", "Festive", ["S", "M", "L", "4-5Y", "6-7Y"], 5999, "New Edit", "New Arrivals", ["new-arrivals", "occasion", "bestsellers"]],
+  ["studio-wrap-dress", "Studio Wrap Dress", "Dresses", "Everyday", womenSizes, 4599, "New", "New Arrivals", ["new-arrivals", "women"]],
+  ["linen-resort-shirt", "Linen Resort Shirt", "Tops", "Everyday", womenSizes, 2899, "Core", "Women", ["women"]],
+  ["soft-tailored-trouser", "Soft Tailored Trouser", "Bottoms", "Everyday", womenSizes, 3499, "Best Seller", "Women", ["women", "bestsellers"]],
+  ["satin-evening-dress", "Satin Evening Dress", "Dresses", "Wedding", womenSizes, 5799, "Occasion", "Women", ["women", "occasion"]],
+  ["printed-ease-kurta", "Printed Ease Kurta", "Kurta Sets", "Everyday", womenSizes, 3899, "Core", "Women", ["women"]],
+  ["garden-party-co-ord", "Garden Party Co-ord", "Co-ord Sets", "Festive", womenSizes, 4699, "Best Seller", "Women", ["women", "bestsellers"]],
+  ["monochrome-midi-dress", "Monochrome Midi Dress", "Dresses", "Portrait Day", womenSizes, 4299, "Editorial", "Women", ["women"]],
+  ["cream-applique-set", "Cream Applique Set", "Co-ord Sets", "Wedding", womenSizes, 5199, "Premium", "Women", ["women", "occasion"]],
+  ["weekday-cotton-dress", "Weekday Cotton Dress", "Dresses", "Everyday", womenSizes, 3199, "Core", "Women", ["women"]],
+  ["orchid-kurta-set", "Orchid Kurta Set", "Kurta Sets", "Festive", womenSizes, 4399, "New", "Women", ["women"]],
+  ["linen-waistcoat-set", "Linen Waistcoat Set", "Co-ord Sets", "Portrait Day", womenSizes, 4999, "Best Seller", "Women", ["women", "bestsellers"]],
+  ["mini-cotton-play-set", "Mini Cotton Play Set", "Kidswear", "Everyday", kidsSizes, 2499, "Core", "Kids", ["kids"]],
+  ["storybook-dress", "Storybook Dress", "Dresses", "Portrait Day", kidsSizes, 3199, "Best Seller", "Kids", ["kids", "bestsellers"]],
+  ["tiny-festive-kurta", "Tiny Festive Kurta", "Kurta Sets", "Festive", kidsSizes, 2899, "New", "Kids", ["kids", "occasion"]],
+  ["picnic-check-dress", "Picnic Check Dress", "Kidswear", "Everyday", kidsSizes, 2599, "Core", "Kids", ["kids"]],
+  ["mini-embroidered-set", "Mini Embroidered Set", "Co-ord Sets", "Wedding", kidsSizes, 3499, "Occasion", "Kids", ["kids", "occasion"]],
+  ["playful-pink-dress", "Playful Pink Dress", "Dresses", "Festive", kidsSizes, 2799, "Best Seller", "Kids", ["kids", "bestsellers"]],
+  ["little-sage-kurta", "Little Sage Kurta", "Kurta Sets", "Everyday", kidsSizes, 2699, "Soft Cotton", "Kids", ["kids"]],
+  ["mini-tailored-co-ord", "Mini Tailored Co-ord", "Co-ord Sets", "Portrait Day", kidsSizes, 3299, "Editorial", "Kids", ["kids"]],
+  ["buttercup-frock", "Buttercup Frock", "Dresses", "Everyday", kidsSizes, 2399, "Core", "Kids", ["kids"]],
+  ["celebration-bundle", "Celebration Bundle", "Kidswear", "Wedding", kidsSizes, 3999, "Gift Ready", "Kids", ["kids", "occasion"]],
+  ["moonlit-lehenga-set", "Moonlit Lehenga Set", "Lehenga Sets", "Wedding", womenSizes, 6999, "Premium", "Occasion", ["occasion", "bestsellers"]],
+  ["sangeet-co-ord-set", "Sangeet Co-ord Set", "Co-ord Sets", "Wedding", womenSizes, 5899, "Occasion", "Occasion", ["occasion"]],
+  ["festive-family-edit", "Festive Family Edit", "Co-ord Sets", "Festive", ["S", "M", "L", "4-5Y", "6-7Y"], 6499, "Best Seller", "Occasion", ["occasion", "bestsellers"]],
+  ["portrait-day-midi", "Portrait Day Midi", "Dresses", "Portrait Day", womenSizes, 4999, "Editorial", "Occasion", ["occasion"]],
+  ["gold-thread-kurta", "Gold Thread Kurta", "Kurta Sets", "Festive", womenSizes, 4799, "New", "Occasion", ["occasion"]],
+  ["mini-wedding-dress", "Mini Wedding Dress", "Dresses", "Wedding", kidsSizes, 3699, "Occasion", "Occasion", ["occasion", "kids"]],
+  ["ivory-ceremony-set", "Ivory Ceremony Set", "Co-ord Sets", "Wedding", womenSizes, 6299, "Premium", "Occasion", ["occasion"]],
+  ["garden-mehendi-dress", "Garden Mehendi Dress", "Dresses", "Festive", womenSizes, 4599, "Best Seller", "Occasion", ["occasion", "bestsellers"]],
+  ["tiny-ceremony-kurta", "Tiny Ceremony Kurta", "Kurta Sets", "Wedding", kidsSizes, 3199, "Gift Ready", "Occasion", ["occasion", "kids"]],
+  ["silver-evening-wrap", "Silver Evening Wrap", "Dresses", "Wedding", womenSizes, 5599, "Limited", "Occasion", ["occasion"]],
+];
+
+export const bestsellerProducts = productSpecs.map((product, index) => {
+  const image = productImagePool[index % productImagePool.length];
+  const galleryImage = productImagePool[(index + 1) % productImagePool.length];
+
+  return {
+    id: index + 1,
+    slug: product[0],
+    name: product[1],
+    category: product[2],
+    occasion: product[3],
+    sizes: product[4],
+    price: product[5],
+    badge: product[6],
+    label: product[7],
+    collections: product[8],
+    image: image.thumb,
+    createdDate: new Date(2026, 4, Math.max(1, 31 - index)),
+    gallery: [
+      { type: "image", src: image.full },
+      { type: "image", src: galleryImage.full },
+    ],
+  };
+});
 
 export const homeHighlights = [
   "Women",
