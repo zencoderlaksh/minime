@@ -9,7 +9,14 @@ import { formatCurrency } from "../../lib/utils/formatCurrency.js";
 function CheckoutPage() {
   const navigate = useNavigate();
   const cartItems = useCartStore((s) => s.items);
-  const subtotal = useCartStore((s) => s.subtotal);
+  const subtotal = useMemo(
+    () =>
+      cartItems.reduce(
+        (sum, item) => sum + item.price * (item.quantity ?? 1),
+        0,
+      ),
+    [cartItems],
+  );
   const incrementQuantity = useCartStore((s) => s.incrementQuantity);
   const decrementQuantity = useCartStore((s) => s.decrementQuantity);
   const removeItem = useCartStore((s) => s.removeItem);

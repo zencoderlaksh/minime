@@ -6,7 +6,10 @@ import { formatCurrency } from "../../lib/utils/formatCurrency.js";
 function CartPage() {
   const navigate = useNavigate();
   const items = useCartStore((s) => s.items);
-  const subtotal = useCartStore((s) => s.subtotal);
+  const subtotal = useMemo(
+    () => items.reduce((sum, i) => sum + i.price * (i.quantity ?? 1), 0),
+    [items],
+  );
 
   const itemCount = useMemo(
     () => items.reduce((sum, i) => sum + (i.quantity ?? 1), 0),

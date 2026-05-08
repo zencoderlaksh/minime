@@ -9,7 +9,10 @@ function CartDrawer() {
   const isCartOpen = useUiStore((state) => state.isCartOpen);
   const closeCart = useUiStore((state) => state.closeCart);
   const items = useCartStore((state) => state.items);
-  const subtotal = useCartStore((state) => state.subtotal);
+  const subtotal = items.reduce(
+    (sum, item) => sum + item.price * (item.quantity ?? 1),
+    0,
+  );
 
   useLockBodyScroll(isCartOpen);
 
