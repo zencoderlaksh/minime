@@ -1,17 +1,19 @@
-import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import { navLinks } from '../../data/nav.data.js'
-import { routes } from '../../lib/constants/routes.js'
-import { useUiStore } from '../../store/useUiStore.js'
-import MegaMenu from './MegaMenu.jsx'
-import MobileMenu from './MobileMenu.jsx'
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { navLinks } from "../../data/nav.data.js";
+import { routes } from "../../lib/constants/routes.js";
+import { useUiStore } from "../../store/useUiStore.js";
+import MegaMenu from "./MegaMenu.jsx";
+import MobileMenu from "./MobileMenu.jsx";
+import ContactDrawer from "./ContactDrawer.jsx";
 
 function Header() {
-  const [activeItem, setActiveItem] = useState(null)
-  const isMobileMenuOpen = useUiStore((state) => state.isMobileMenuOpen)
-  const toggleMobileMenu = useUiStore((state) => state.toggleMobileMenu)
-  const closeMobileMenu = useUiStore((state) => state.closeMobileMenu)
-  const openCart = useUiStore((state) => state.openCart)
+  const [activeItem, setActiveItem] = useState(null);
+  const isMobileMenuOpen = useUiStore((state) => state.isMobileMenuOpen);
+  const toggleMobileMenu = useUiStore((state) => state.toggleMobileMenu);
+  const closeMobileMenu = useUiStore((state) => state.closeMobileMenu);
+  const openCart = useUiStore((state) => state.openCart);
+  const openContactDrawer = useUiStore((state) => state.openContactDrawer);
 
   return (
     <header
@@ -19,7 +21,7 @@ function Header() {
       onMouseLeave={() => setActiveItem(null)}
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) {
-          setActiveItem(null)
+          setActiveItem(null);
         }
       }}
     >
@@ -39,6 +41,14 @@ function Header() {
         </Link>
 
         <nav className="site-header__nav" aria-label="Primary navigation">
+          <button
+            type="button"
+            className="site-header__link site-header__contact-button"
+            onClick={openContactDrawer}
+          >
+            Contact
+          </button>
+
           {navLinks.map((link) => (
             <NavLink
               key={link.label}
@@ -46,7 +56,7 @@ function Header() {
               onMouseEnter={() => setActiveItem(link)}
               onFocus={() => setActiveItem(link)}
               className={({ isActive }) =>
-                isActive ? 'site-header__link is-active' : 'site-header__link'
+                isActive ? "site-header__link is-active" : "site-header__link"
               }
             >
               {link.label}
@@ -64,9 +74,14 @@ function Header() {
       </div>
 
       <MegaMenu item={activeItem} visible={Boolean(activeItem)} />
-      <MobileMenu items={navLinks} open={isMobileMenuOpen} onClose={closeMobileMenu} />
+      <MobileMenu
+        items={navLinks}
+        open={isMobileMenuOpen}
+        onClose={closeMobileMenu}
+        onOpenContact={openContactDrawer}
+      />
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

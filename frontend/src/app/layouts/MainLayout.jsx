@@ -1,8 +1,9 @@
-import { Outlet } from 'react-router-dom'
-import AnnouncementBar from '../../components/navigation/AnnouncementBar.jsx'
-import Header from '../../components/navigation/Header.jsx'
-import Footer from '../../components/navigation/Footer.jsx'
-import CartDrawer from '../../components/cart/CartDrawer.jsx'
+import { Outlet } from "react-router-dom";
+import AnnouncementBar from "../../components/navigation/AnnouncementBar.jsx";
+import Header from "../../components/navigation/Header.jsx";
+import Footer from "../../components/navigation/Footer.jsx";
+import CartDrawer from "../../components/cart/CartDrawer.jsx";
+import ContactDrawer from "../../components/navigation/ContactDrawer.jsx";
 
 function MainLayout() {
   return (
@@ -14,8 +15,9 @@ function MainLayout() {
       </main>
       <Footer />
       <CartDrawer />
+      <ContactDrawer />
     </div>
-  )
+  );
 }
 
-export default MainLayout
+export default MainLayout;

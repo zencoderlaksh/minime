@@ -10,6 +10,9 @@ function CheckoutPage() {
   const navigate = useNavigate();
   const cartItems = useCartStore((s) => s.items);
   const subtotal = useCartStore((s) => s.subtotal);
+  const incrementQuantity = useCartStore((s) => s.incrementQuantity);
+  const decrementQuantity = useCartStore((s) => s.decrementQuantity);
+  const removeItem = useCartStore((s) => s.removeItem);
 
   const [isPlacingOrder, setIsPlacingOrder] = useState(false);
   const [status, setStatus] = useState({ type: "idle", message: "" });
@@ -22,6 +25,9 @@ function CheckoutPage() {
   const shipping = 0;
   const tax = 0;
   const total = subtotal + shipping + tax;
+
+  // Alias: ensure we always read the latest store-derived subtotal
+  // (useCartStore subtotal is computed from items/quantity).
 
   const canPlaceOrder = cartItems.length > 0 && !isPlacingOrder;
 
@@ -56,9 +62,19 @@ function CheckoutPage() {
 
   return (
     <section className="section-space">
-      <div className="container simple-page">
-        <p className="eyebrow">Checkout</p>
-        <h1>Checkout</h1>
+      <div
+        className="container"
+        style={{
+          width: "100%",
+          maxWidth: "1200px",
+          paddingInline: "1.5rem",
+          margin: "0 auto",
+        }}
+      >
+        <div style={{ marginBottom: 22 }}>
+          <p className="eyebrow">Checkout</p>
+          <h1 style={{ marginTop: 10 }}>Checkout</h1>
+        </div>
 
         {cartItems.length === 0 ?
           <div className="checkout-empty">
@@ -72,38 +88,107 @@ function CheckoutPage() {
             </button>
           </div>
         : <div
-            className="checkout-layout"
             style={{
               display: "grid",
               gap: 24,
-              gridTemplateColumns: "1.3fr 0.7fr",
+              gridTemplateColumns: "1.35fr 0.65fr",
+              alignItems: "start",
             }}
           >
-            <div>
+            <div
+              style={{
+                border: "1px solid var(--color-line)",
+                borderRadius: 14,
+                background: "var(--color-panel)",
+                backdropFilter: "blur(16px)",
+                boxShadow: "var(--shadow-soft)",
+                padding: 18,
+              }}
+            >
               <h2 style={{ marginBottom: 12 }}>Your items</h2>
+
               <div className="cart-lines">
                 {cartItems.map((item) => {
                   const qty = item.quantity ?? 1;
+
                   return (
                     <article
                       key={item.id}
                       className="cart-line"
                       style={{
-                        display: "flex",
-                        justifyContent: "space-between",
+                        display: "grid",
+                        gridTemplateColumns: "1fr auto",
                         gap: 16,
                         padding: "12px 0",
                         borderBottom: "1px solid #eee",
+                        alignItems: "start",
                       }}
                     >
-                      <div>
-                        <p style={{ margin: 0, fontWeight: 600 }}>
-                          {item.name}
-                        </p>
-                        <span style={{ color: "#666" }}>{item.size}</span>
-                        <div style={{ color: "#666" }}>Qty: {qty}</div>
+                      <div style={{ display: "flex", gap: 12 }}>
+                        <div style={{ flex: 1 }}>
+                          <p style={{ margin: 0, fontWeight: 700 }}>
+                            {item.name}
+                          </p>
+                          <span style={{ color: "#666" }}>{item.size}</span>
+
+                          <div
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: 8,
+                              marginTop: 10,
+                            }}
+                          >
+                            <button
+                              type="button"
+                              className="button button--secondary"
+                              style={{ width: 34, padding: 0 }}
+                              onClick={() => decrementQuantity(item.id)}
+                              aria-label={`Decrease quantity for ${item.name}`}
+                            >
+                              −
+                            </button>
+
+                            <span style={{ minWidth: 42, textAlign: "center" }}>
+                              {qty}
+                            </span>
+
+                            <button
+                              type="button"
+                              className="button button--secondary"
+                              style={{ width: 34, padding: 0 }}
+                              onClick={() => incrementQuantity(item.id)}
+                              aria-label={`Increase quantity for ${item.name}`}
+                            >
+                              +
+                            </button>
+
+                            <button
+                              type="button"
+                              className="button button--ghost"
+                              style={{ marginLeft: 10 }}
+                              onClick={() => removeItem(item.id)}
+                            >
+                              Remove
+                            </button>
+                          </div>
+                        </div>
+
+                        <div
+                          style={{
+                            textAlign: "right",
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: 10,
+                            alignItems: "flex-end",
+                          }}
+                        >
+                          <div style={{ color: "#666", fontSize: 13 }}>
+                            Line total
+                          </div>
+                          <strong>{formatCurrency(item.price * qty)}</strong>
+                        </div>
                       </div>
-                      <strong>{formatCurrency(item.price * qty)}</strong>
                     </article>
                   );
                 })}
@@ -120,9 +205,14 @@ function CheckoutPage() {
 
             <aside
               style={{
-                border: "1px solid #eee",
-                padding: 16,
-                borderRadius: 12,
+                position: "sticky",
+                top: 110,
+                border: "1px solid var(--color-line)",
+                padding: 18,
+                borderRadius: 14,
+                background: "var(--color-panel)",
+                backdropFilter: "blur(16px)",
+                boxShadow: "var(--shadow-soft)",
                 height: "fit-content",
               }}
             >

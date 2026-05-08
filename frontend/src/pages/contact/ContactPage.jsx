@@ -36,37 +36,43 @@ function ContactPage() {
 
   return (
     <section className="contact-page">
-      <div className="contact-page__hero">
-        <div className="contact-page__visual" aria-hidden="true" />
+      <div className="container contact-page__wrapper">
+        <div className="contact-page__hero">
+          <div className="contact-page__visual" aria-hidden="true" />
 
-        <div className="contact-page__panel">
-          <div className="contact-page__panel-copy">
-            <p className="eyebrow">Contact us</p>
-            <h1>Customer care and touchpoints for every enquiry.</h1>
-            <p className="contact-page__intro">
-              Reach us by message, call, live chat, or WhatsApp. We’re available
-              throughout the week to help with orders, shipping, returns, and more.
-            </p>
-          </div>
+          <div className="contact-page__panel">
+            <div className="contact-page__panel-copy">
+              <p className="eyebrow">Contact us</p>
+              <h1>Customer care designed for fast, thoughtful support.</h1>
+              <p className="contact-page__intro">
+                Reach out by message, phone, live chat, or WhatsApp. Our team is
+                ready to help with orders, delivery, returns, styling, and
+                gifting.
+              </p>
+            </div>
 
-          <div className="contact-page__methods">
-            {contactMethods.map((method) => (
-              <article key={method.id} className="contact-method-card">
-                <h2>{method.title}</h2>
-                <ul>
-                  {method.details.map((detail) => (
-                    <li key={detail}>{detail}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
+            <div className="contact-page__panel-actions">
+              <button type="button" className="hero-pill hero-pill--dark">
+                Start a conversation
+              </button>
+              <button type="button" className="hero-pill">
+                Call customer care
+              </button>
+            </div>
           </div>
+        </div>
 
-          <div className="contact-page__cta">
-            <button type="button" className="hero-pill hero-pill--dark">
-              Get in contact with us
-            </button>
-          </div>
+        <div className="contact-page__methods">
+          {contactMethods.map((method) => (
+            <article key={method.id} className="contact-method-card">
+              <p className="contact-method-card__label">{method.title}</p>
+              <ul>
+                {method.details.map((detail) => (
+                  <li key={detail}>{detail}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
       </div>
     </section>

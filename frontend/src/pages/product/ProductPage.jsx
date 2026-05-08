@@ -4,6 +4,7 @@ import { useCartStore } from "../../store/useCartStore.js";
 import { useWishlistStore } from "../../store/useWishlistStore.js";
 import { formatCurrency } from "../../lib/utils/formatCurrency.js";
 import { bestsellerProducts } from "../../data/home.data.js";
+import SimilarProductsSection from "./components/SimilarProductsSection.jsx";
 
 function ProductPage() {
   const { slug } = useParams();
@@ -204,6 +205,8 @@ function ProductPage() {
             </div>
           </div>
         </div>
+
+        <SimilarProductsSection product={product} />
       </div>
     </section>
   );
