@@ -1,8 +1,29 @@
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../lib/utils/formatCurrency.js";
+import { useWishlistStore } from "../../store/useWishlistStore.js";
 
 function ProductCard({ product, collectionLabel }) {
   const mediaLabel = collectionLabel || product.label;
+  const toggleWishlist = useWishlistStore((s) => s.toggleItem);
+  const wishlistItems = useWishlistStore((s) => s.items);
+
+  const wishlistSelected = wishlistItems.some(
+    (entry) => entry.id === product.id,
+  );
+
+  const handleWishlist = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Product card doesn't know size. We store without size.
+    toggleWishlist({
+      id: product.id ?? `${product.slug}-UNSELECTED`,
+      name: product.name,
+      size: undefined,
+      price: product.price,
+      image: product.image,
+    });
+  };
 
   return (
     <article className="product-card">
@@ -14,12 +35,6 @@ function ProductCard({ product, collectionLabel }) {
             loading="lazy"
             decoding="async"
           />
-          {product.label && (
-            <span className="product-card__label">{product.label}</span>
-          )}
-          {mediaLabel && (
-            <span className="product-card__collection">{mediaLabel}</span>
-          )}
         </div>
 
         <div className="product-card__content">
@@ -33,6 +48,15 @@ function ProductCard({ product, collectionLabel }) {
               <span className="product-card__badge">{product.badge}</span>
             )}
           </div>
+
+          <button
+            type="button"
+            className="product-card__wishlist"
+            aria-label="Toggle wishlist"
+            onClick={handleWishlist}
+          >
+            {wishlistSelected ? "♥" : "♡"}
+          </button>
         </div>
       </Link>
     </article>

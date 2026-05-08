@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useCartStore } from "../../store/useCartStore.js";
+import { useWishlistStore } from "../../store/useWishlistStore.js";
 import { formatCurrency } from "../../lib/utils/formatCurrency.js";
 import { bestsellerProducts } from "../../data/home.data.js";
 
@@ -8,9 +9,20 @@ function ProductPage() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const addItem = useCartStore((state) => state.addItem);
+  const toggleWishlist = useWishlistStore((s) => s.toggleItem);
+  const wishlistItems = useWishlistStore((s) => s.items);
 
   const product = bestsellerProducts.find((p) => p.slug === slug);
+
   const [selectedSize, setSelectedSize] = useState("");
+
+  const wishlistSelected =
+    product ?
+      wishlistItems.some(
+        (entry) => entry.id === `${product.slug}-${selectedSize}`,
+      )
+    : false;
+
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [isAddingToCart, setIsAddingToCart] = useState(false);
 
@@ -150,9 +162,19 @@ function ProductPage() {
               <button
                 type="button"
                 className="product-detail__wishlist"
-                aria-label="Add to wishlist"
+                aria-label="Toggle wishlist"
+                onClick={() => {
+                  const sizeForWishlist = selectedSize || "UNSELECTED";
+                  toggleWishlist({
+                    id: `${product.slug}-${sizeForWishlist}`,
+                    name: product.name,
+                    size: selectedSize || undefined,
+                    price: product.price,
+                    image: product.image,
+                  });
+                }}
               >
-                ♡
+                {wishlistSelected ? "♥" : "♡"}
               </button>
             </div>
 

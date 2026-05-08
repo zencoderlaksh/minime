@@ -54,7 +54,6 @@ function CollectionPage() {
               fetchPriority="high"
               decoding="async"
             />
-            <span>{hero.imageLabel}</span>
           </div>
         </div>
 

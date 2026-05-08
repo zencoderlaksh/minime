@@ -1,10 +1,8 @@
-# TODO: Redesign InstagramSection (below video hero)
+# Project TODO (commerce / wishlist / cart)
 
-## Plan
-
-- [x] Understand current layout and files
-- [x] Update `InstagramSection.jsx` — editorial offset grid, section header, cleaner hover
-- [x] Update `globals.css` — smaller cards, image-first design, remove parallax
-- [x] Update `home.data.js` — refine tile copy for fashion editorial feel
-- [x] Update media queries for responsive behavior
-- [x] Verify build and test
+- [x] Implement real checkout page (use cart store, show items + subtotal, place order)
+- [x] Implement real cart page (items list, quantity controls, remove)
+- [x] Implement real wishlist page (list items, remove)
+- [x] Add wishlist toggle button in product card (and/or product page)
+- [x] Verify cart -> checkout flow (no state loss)
+- [ ] Run frontend tests/dev build and manually validate wishlist/cart/checkout
