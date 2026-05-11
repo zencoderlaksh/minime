@@ -341,24 +341,18 @@ button {
   display: grid;
   gap: 1rem;
   overflow-y: auto;
+  min-height: 0;
 }
 
-.mobile-menu__section {
-  padding-bottom: 1rem;
+.mobile-menu__flowing-menu {
+  position: relative;
+  height: min(72vh, 37.5rem);
+  min-height: 27rem;
+  overflow: hidden;
+  border: 1px solid #ffffff;
+  background: #120f17;
 }
 
-.mobile-menu__section p {
-  margin-top: 0.45rem;
-}
-
-.mobile-menu__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  margin-top: 0.9rem;
-}
-
-.mobile-menu__links a,
 .filter-chip {
   padding: 0.6rem 1rem;
   border-radius: 0;
@@ -384,7 +378,6 @@ button {
   color: #fff;
 }
 
-.mobile-menu__links a:hover,
 .filter-chip:hover {
   color: var(--color-ink);
   border-color: rgba(31, 27, 24, 0.24);

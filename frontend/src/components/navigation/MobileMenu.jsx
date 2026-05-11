@@ -1,9 +1,15 @@
-import { Link } from "react-router-dom";
-
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll.js";
+import FlowingMenu from "../FlowingMenu.jsx";
 
 function MobileMenu({ items, open, onClose, onOpenContact }) {
   useLockBodyScroll(open);
+
+  const flowingItems = items.map((item) => ({
+    link: item.to,
+    text: item.label,
+    image: item.featured.image,
+    onClick: onClose,
+  }));
 
   return (
     <div className={open ? "mobile-menu is-open" : "mobile-menu"}>
@@ -33,28 +39,17 @@ function MobileMenu({ items, open, onClose, onOpenContact }) {
         </div>
 
         <div className="mobile-menu__body">
-          {items.map((item) => (
-            <div key={item.label} className="mobile-menu__section">
-              <Link to={item.to} onClick={onClose}>
-                <h3>{item.label}</h3>
-              </Link>
-              <p>{item.featured.description}</p>
-              <div className="mobile-menu__links">
-                {item.groups
-                  .flatMap((group) => group.links)
-                  .slice(0, 4)
-                  .map((link) => (
-                    <Link
-                      key={`${item.label}-${link.label}`}
-                      to={link.to}
-                      onClick={onClose}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-              </div>
-            </div>
-          ))}
+          <div className="mobile-menu__flowing-menu">
+            <FlowingMenu
+              items={flowingItems}
+              speed={15}
+              textColor="#ffffff"
+              bgColor="#120F17"
+              marqueeBgColor="#ffffff"
+              marqueeTextColor="#120F17"
+              borderColor="#ffffff"
+            />
+          </div>
         </div>
       </div>
     </div>
