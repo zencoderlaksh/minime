@@ -61,6 +61,7 @@ button {
 }
 
 .page-shell {
+  padding-top: 6rem; /* Account for fixed header height */
   padding-bottom: 2rem;
 }
 
@@ -92,11 +93,13 @@ button {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 20;
   border-bottom: 1px solid var(--color-line);
-  background: rgba(255, 250, 245, 0.72);
+  background: rgba(255, 250, 245, 0.85);
   backdrop-filter: blur(18px);
 }
 

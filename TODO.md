@@ -1,8 +1,5 @@
-# Project TODO (commerce / wishlist / cart)
-
-- [x] Implement real checkout page (use cart store, show items + subtotal, place order)
-- [x] Implement real cart page (items list, quantity controls, remove)
-- [x] Implement real wishlist page (list items, remove)
-- [x] Add wishlist toggle button in product card (and/or product page)
-- [x] Verify cart -> checkout flow (no state loss)
-- [ ] Run frontend tests/dev build and manually validate wishlist/cart/checkout
+- [x] Replace video hero with image hero (edit HeroSection.jsx)
+- [x] Remove video logic and ensure only <img> renders
+- [ ] Add new banner image asset for ocean/boat/people/sky look (download or use existing)
+- [x] Wire banner image into home.data.js (currently uses Denim.jpg placeholder)
+- [ ] Verify hero visuals on desktop + mobile breakpoints
