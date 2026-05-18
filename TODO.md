@@ -1,5 +1,6 @@
-- [x] Replace video hero with image hero (edit HeroSection.jsx)
-- [x] Remove video logic and ensure only <img> renders
-- [ ] Add new banner image asset for ocean/boat/people/sky look (download or use existing)
-- [x] Wire banner image into home.data.js (currently uses Denim.jpg placeholder)
-- [ ] Verify hero visuals on desktop + mobile breakpoints
+- [x] Replace favicon configuration to use Minime logo asset
+- [x] Add MinimeLogo usage in navigation brand (Header)
+- [x] Add MinimeLogo usage in navigation brand (MobileMenu)
+
+- [ ] Replace all occurrences of plain “MiniMe” brand text in header/footer with logo image
+- [ ] Run frontend build/lint/tests (if available) to verify no broken imports or layout issues

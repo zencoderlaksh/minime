@@ -20,7 +20,7 @@ function MobileMenu({ items, open, onClose, onOpenContact }) {
       />
       <div className="mobile-menu__panel">
         <div className="mobile-menu__header">
-          <strong>Browse MiniMe</strong>
+          <strong>Browse Minime</strong>
           <div>
             <button
               type="button"

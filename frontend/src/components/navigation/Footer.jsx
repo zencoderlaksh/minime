@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom'
-import { routes } from '../../lib/constants/routes.js'
+import { Link } from "react-router-dom";
+import { routes } from "../../lib/constants/routes.js";
 
 function Footer() {
   return (
     <footer className="site-footer">
       <div className="container site-footer__grid">
         <div>
-          <p className="eyebrow">MiniMe</p>
+          <p className="eyebrow">Minime</p>
           <h3>Soft luxury for women and little ones.</h3>
           <p>
             Built to feel editorial, warm, and easy to shop across every scroll.
@@ -34,7 +34,7 @@ function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

@@ -18,6 +18,7 @@
   --space-xs: 0.75rem;
   --space-xl: 3rem;
   --space-3xl: 6rem;
-  --font-body: 'Avenir Next', 'Segoe UI', sans-serif;
-  --font-heading: 'Iowan Old Style', 'Times New Roman', serif;
+  --font-body: "Avenir Next", "Segoe UI", sans-serif;
+  --font-heading:
+    "Playfair Display", "Iowan Old Style", "Times New Roman", serif;
 }

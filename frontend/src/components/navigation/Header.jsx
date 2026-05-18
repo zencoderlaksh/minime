@@ -36,8 +36,19 @@ function Header() {
           Menu
         </button>
 
-        <Link className="site-header__brand" to={routes.home}>
-          MiniMe
+        <Link
+          className="site-header__brand"
+          to={routes.home}
+          aria-label="Minime home"
+        >
+          <img
+            src={new URL(
+              "../../assets/images/MinimeLogo.jpeg",
+              import.meta.url,
+            ).toString()}
+            alt="Minime"
+            className="site-header__brand-logo"
+          />
         </Link>
 
         <nav className="site-header__nav" aria-label="Primary navigation">

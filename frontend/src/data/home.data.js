@@ -562,6 +562,10 @@ export const heroBanner = {
   src: heroBannerImg,
 };
 
+// Temporary fix: project crashed because heroVideoFile was referenced but never defined.
+// Since the hero video was replaced with a static banner image, keep a placeholder here.
+const heroVideoFile = null;
+
 export const collectionVideoGroups = [
   {
     id: "women",

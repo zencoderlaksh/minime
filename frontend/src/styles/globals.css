@@ -121,6 +121,25 @@ button {
   letter-spacing: -0.04em;
 }
 
+.site-header__brand-logo {
+  width: 5.5rem;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 960px) {
+  .site-header__brand-logo {
+    width: 4.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header__brand-logo {
+    width: 4rem;
+  }
+}
+
 .site-header__nav,
 .site-header__actions {
   display: flex;
